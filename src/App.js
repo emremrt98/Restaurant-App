@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Card from "./component/card";
+import "./component/style.css"
+
 
 function App() {
+  const [show, setShow] = useState([])
+
+  const getApi = async () => {
+
+    const url = "https://random-data-api.com/api/restaurant/random_restaurant";
+    await fetch(url).then(async response => await response.json()).then(data => {
+      setShow([...show, data]);
+      //setFinaldata({ data })
+    })
+
+  }
+
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="button" ><button onClick={getApi} > Add new restaurant </button></div>
+      <div>{show.map((element, index) => (<Card key={index} show={element} />))}</div>
+
     </div>
   );
 }
