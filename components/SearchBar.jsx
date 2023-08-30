@@ -8,7 +8,7 @@ export default function Searchbar() {
             <View style={styles.iconWrapper}>
                 <AntDesign style={styles.iconStyle} name="search1" size={24} color="black" />
             </View>
-            <TextInput style={styles.inputStyle} placeholder="Search" autoCapitalize='none' autoComplete={false} />
+            <TextInput style={styles.inputStyle} placeholder="Search" autoCapitalize='none' autoComplete={'false'} />
 
         </View>
     )
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         borderRadius: 6,
         alignItems: 'center',
         flexDirection: 'row',
-      
+
     },
     inputStyle: {
         paddingHorizontal: 15,
