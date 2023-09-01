@@ -2,7 +2,6 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons';
 export default function ResultsDetail({ result }) {
-    console.log(result.is_closed)
     return (
         <View style={styles.container}>
             <View>
